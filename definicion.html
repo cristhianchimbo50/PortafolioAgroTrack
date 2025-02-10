@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definición</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <h2>Bitcoders</h2>
+        <a href="index.html">Inicio</a>
+        <a href="definicion.html">Definición</a>
+        <a href="planificacion.html">Planificación</a>
+        <a href="ejecucion.html">Ejecución</a>
+        <a href="cierre.html">Cierre</a>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="content">
+        <h1>Definición</h1>
+        <button class="open-modal" data-pdf="doc/definicion/1_ESTUDIO_DE_FACTIBILIDAD.pdf">📄 Estudio de Factibilidad</button>
+        <button class="open-modal" data-pdf="doc/definicion/2_ACTA_DE_CONSTITUCION.pdf">📄 Acta de Constitución</button>
+        <button class="open-modal" data-pdf="doc/definicion/3_SOW.pdf">📄 SOW</button>
+    </div>
+
+    <!-- Modal para PDF -->
+    <div class="modal" id="pdfModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

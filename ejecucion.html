@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecución</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <h2>Bitcoders</h2>
+        <a href="index.html">Inicio</a>
+        <a href="definicion.html">Definición</a>
+        <a href="planificacion.html">Planificación</a>
+        <a href="ejecucion.html">Ejecución</a>
+        <a href="cierre.html">Cierre</a>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="content">
+        <h1>Ejecución</h1>
+        <button class="open-modal" data-pdf="doc/ejecucion/15_SOLICITUD_DE_CONTROL.pdf">📄 Solicitud de Control de Cambios</button>
+        <button class="open-modal" data-pdf="doc/ejecucion/16_REPLANIFICACION_DE_PROYECTO.pdf">📄 Replanificación de Proyecto</button>
+    </div>
+
+    <!-- Modal para PDF -->
+    <div class="modal" id="pdfModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

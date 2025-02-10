@@ -284,3 +284,47 @@ p {
     pointer-events: none; /* Evita que se pueda hacer clic en la opción activa */
 }
 
+/* Botón de acción rápida */
+.quick-action-button {
+    position: fixed;
+    bottom: 60px;  /* Aumentamos la separación del borde inferior */
+    right: 30px;   /* Ajustamos la ubicación a la derecha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+    z-index: 1000;  /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilos del texto dentro del botón */
+.quick-action-button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+}
+
+.quick-action-button svg path {
+    transition: 400ms;
+}
+
+/* Efecto al pasar el mouse */
+.quick-action-button:hover {
+    background-color: transparent;
+}
+
+.quick-action-button:hover .text {
+    color: #181717;
+}
+
+.quick-action-button:hover svg path {
+    fill: #181717;
+}

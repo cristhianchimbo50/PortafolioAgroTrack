@@ -3,36 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejecución</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Ejecución - AgroTrack</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
     <!-- Barra Lateral -->
     <div class="sidebar">
-        <h2>Bitcoders</h2>
-        <a href="index.html">Inicio</a>
-        <a href="definicion.html">Definición</a>
-        <a href="planificacion.html">Planificación</a>
-        <a href="ejecucion.html">Ejecución</a>
-        <a href="cierre.html">Cierre</a>
+        <img src="assets/images/agrotrack_logo.png" alt="AgroTrack" class="logo">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="definicion.html" class="nav-link">Definición</a>
+        <a href="planificacion.html" class="nav-link">Planificación</a>
+        <a href="ejecucion.html" class="nav-link">Ejecución</a>
+        <a href="cierre.html" class="nav-link">Cierre</a>
     </div>
+    
 
     <!-- Contenido Principal -->
-    <div class="content">
+    <div class="main-content">
         <h1>Ejecución</h1>
-        <button class="open-modal" data-pdf="doc/ejecucion/15_SOLICITUD_DE_CONTROL.pdf">📄 Solicitud de Control de Cambios</button>
-        <button class="open-modal" data-pdf="doc/ejecucion/16_REPLANIFICACION_DE_PROYECTO.pdf">📄 Replanificación de Proyecto</button>
+
+        <!-- Contenedor de documentos -->
+        <div class="documents-container">
+            <button class="cssbuttons-io open-modal" data-pdf="doc/3. EJECUCION/15. SOLICITUD DE CONTROL DE CAMBIOS - ALPHADEVS.pdf">
+                <span>📄 15. Solicitud de Control de Cambios</span>
+            </button>
+            <button class="cssbuttons-io open-modal" data-pdf="doc/3. EJECUCION/16. REPLANIFICACION DE PROYECTO - ALPHADEVS.pdf">
+                <span>📄 16. Replanificación de Proyecto</span>
+            </button>
+        </div>
     </div>
 
-    <!-- Modal para PDF -->
+    <!-- Modal para visualizar PDFs -->
     <div class="modal" id="pdfModal">
         <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
+            <span class="close" id="closeModal">✖</span>
             <iframe id="pdfViewer" src="" frameborder="0"></iframe>
         </div>
     </div>
 
-    <script src="js/scripts.js"></script>
+    <footer>
+        <p>© 2024 AlphaDevs</p>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>

@@ -1,0 +1,285 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1B3D2F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo del sidebar */
+.sidebar img.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Links del sidebar */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar a:hover {
+    background: #387059;
+    transform: scale(1);
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+    margin-left: 250px; /* Espacio suficiente para que no se superponga con el sidebar */
+    width: calc(100% - 250px); /* Se ajusta al tamaño restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CONTENEDOR DE BOTONES PDF */
+.documents-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Asegura que los botones se distribuyan correctamente */
+    gap: 20px; /* Espaciado entre los botones */
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ESTILOS DE LOS BOTONES PDF */
+.cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, #3d6856, #1B3D2F);
+    color: ghostwhite;
+    overflow: hidden;
+    width: 300px; /* Asegura que los botones no sean demasiado anchos */
+    height: 60px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ICONO Y TEXTO DEL BOTÓN */
+.cssbuttons-io svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+}
+
+.cssbuttons-io span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+/* EFECTO ANIMADO DEL BOTÓN */
+.cssbuttons-io::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 100%;
+    background: #000;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+    transform: scale(0.95);
+}
+
+/* MODAL (PDF MÁS GRANDE Y CENTRADO) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* CUERPO DE LA MODAL - MÁS GRANDE */
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 1400px;
+}
+
+/* PDF OCUPANDO TODO EL ESPACIO DISPONIBLE */
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* BOTÓN DE CERRAR SIMPLE */
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #bf0426;
+    padding: 5px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modal .close:hover {
+    background: #1B3D2F;
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    background: #1B3D2F;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-right: 10px;
+}
+
+/* RESPONSIVE - DISPOSITIVOS PEQUEÑOS */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .documents-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    footer {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Logo principal de AgroTrack en el centro */
+.main-logo {
+    width: 250px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Texto principal */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1B3D2F; /* Color oscuro del logo AgroTrack */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Logo de AlphaDevs debajo del texto */
+.footer-logo {
+    width: 300px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Estilo para la opción activa del sidebar */
+.sidebar a.active {
+    background: #387059; /* Color más claro */
+    font-weight: bold;
+    color: white;
+    pointer-events: none; /* Evita que se pueda hacer clic en la opción activa */
+}

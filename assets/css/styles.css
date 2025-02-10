@@ -329,8 +329,8 @@ p {
     fill: #181717;
 }
 
-/* From Uiverse.io by Peary74 */ 
-button {
+/* Aplica los estilos solo a botones que NO sean .cssbuttons-io.open-modal */
+button:not(.cssbuttons-io.open-modal) {
     font-family: inherit;
     font-size: 20px;
     background: #212121;
@@ -346,45 +346,43 @@ button {
     font-weight: 1000;
     position: fixed;
     z-index: 1000;
-    bottom: 60px; right: 20px;
-  }
-  
-  button span {
+    bottom: 60px;
+    right: 20px;
+}
+
+/* Evita que el hover afecte los botones de clase .cssbuttons-io.open-modal */
+button:not(.cssbuttons-io.open-modal):hover {
+    background: #000;
+}
+
+/* Resto de los estilos de los botones */
+button:not(.cssbuttons-io.open-modal) span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
-  }
-  
-  button svg {
+}
+
+button:not(.cssbuttons-io.open-modal) svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    background: #000;
-  }
-  
-  button:hover .svg-wrapper {
+}
+
+button:not(.cssbuttons-io.open-modal):hover .svg-wrapper {
     transform: scale(1.25);
     transition: 0.5s linear;
-  }
-  
-  button:hover svg {
+}
+
+button:not(.cssbuttons-io.open-modal):hover svg {
     transform: translateX(1.2em) scale(1.1);
     fill: #fff;
-  }
-  
-  button:hover span {
+}
+
+button:not(.cssbuttons-io.open-modal):hover span {
     opacity: 0;
     transition: 0.5s linear;
-  }
-  
-  button:active {
-    transform: scale(0.95);
-  }
+}
 
-  button .verDocs {
-    bottom: 60px; right: 20px;
-  }
-  
+button:not(.cssbuttons-io.open-modal):active {
+    transform: scale(0.95);
+}

@@ -383,4 +383,8 @@ button {
   button:active {
     transform: scale(0.95);
   }
+
+  button .verDocs {
+    bottom: 60px; right: 20px;
+  }
   
